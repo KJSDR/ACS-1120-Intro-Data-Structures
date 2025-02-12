@@ -20,7 +20,7 @@ def frequency(word, histogram):
     return histogram.get(word.lower(), 0)
 
 if __name__ == "__main__":
-    source_file = "flowersofevil.txt"
+    source_file = 'flowersofevil.txt'
     hist = histogram(source_file)
     
     print(f"Total unique words: {unique_words(hist)}")

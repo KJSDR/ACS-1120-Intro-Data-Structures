@@ -2,14 +2,16 @@ import re
 from collections import Counter
 
 def histogram(source_text):
-    """Generate a histogram (word frequency dictionary) from the given text file or string."""
     if isinstance(source_text, str):
         words = re.findall(r'\b\w+\b', source_text.lower())
     else:
         with open(source_text, 'r', encoding='utf-8') as file:
-            words = re.findall(r'\b\w+\b', file.read().lower())
+            text = file.read().lower()
+            print("First 500 characters of text:", text[:500])  # Debugging
+            words = re.findall(r'\b\w+\b', text)
     
     return Counter(words)
+
 
 def unique_words(histogram):
     """Return the count of unique words in the histogram."""

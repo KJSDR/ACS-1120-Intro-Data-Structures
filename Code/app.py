@@ -1,13 +1,13 @@
 """Main script, uses other modules to generate sentences."""
 from flask import Flask
-from .histogram import Histogram
+from .histogram import histogram
 import random
 
 app = Flask(__name__)
 
 # TODO: Initialize your histogram, hash table, or markov chain here.
 # Any code placed here will run only once, when the server starts.
-hist = Histogram(".data/corpus.txt")
+hist = histogram(".data/corpus.txt")
 
 @app.route("/")
 def home():

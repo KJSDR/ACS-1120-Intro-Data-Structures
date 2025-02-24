@@ -2,15 +2,14 @@ import re
 from collections import Counter
 
 def histogram(source_text):
-    if isinstance(source_text, str):
-        words = re.findall(r'\b\w+\b', source_text.lower())
-    else:
-        with open(source_text, 'r', encoding='utf-8') as file:
-            text = file.read().lower()
-            print("First 500 characters of text:", text[:500])  # Debugging
-            words = re.findall(r'\b\w+\b', text)
-    
-    return Counter(words)
+  with open(source_text, 'r') as file:
+    text = file.read().lower()
+    words = re.findall(r"\b[a-zA-Z']+\b", text)
+
+    hist = {}  
+    for word in words:
+        hist[word] = hist.get(word, 0) + 1 
+    return hist
 
 
 def unique_words(histogram):

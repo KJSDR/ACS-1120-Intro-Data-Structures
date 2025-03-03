@@ -72,13 +72,19 @@ class LinkedList:
             self.head = new_node
 
     def find(self, matcher):
-        """Return an item from this linked list if it is present."""
-        node = self.head
-        while node is not None:
+    """Return an item from this linked list if it is present."""
+    node = self.head
+    while node is not None:
+        # Check if matcher is callable, otherwise compare directly
+        if callable(matcher):
             if matcher(node.data):
                 return node.data
-            node = node.next
-        return None
+        else:
+            if node.data == matcher:
+                return node.data
+        node = node.next
+    return None
+
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError."""

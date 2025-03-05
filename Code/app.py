@@ -63,8 +63,8 @@ def home():
         <div class="tweet-container">
             <div class="tweet-header">
                 <img class="profile-pic" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="Profile Picture">
-                <span class="user-name">GeneratedUser</span>
-                <img class="verified-badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified">
+                <span class="user-name">Charles Baudelaire</span>
+                <img class="verified-badge" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/%C3%89tienne_Carjat%2C_Portrait_of_Charles_Baudelaire%2C_circa_1862.jpg/800px-%C3%89tienne_Carjat%2C_Portrait_of_Charles_Baudelaire%2C_circa_1862.jpg" alt="Verified">
             </div>
             <div class="tweet-content">
                 {sentence}

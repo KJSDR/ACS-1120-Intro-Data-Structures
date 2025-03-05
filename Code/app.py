@@ -11,10 +11,10 @@ markov = MarkovChain("Code/data/corpus.txt")
 
 @app.route("/")
 def home():
-    """Route that returns a web page containing a generated sentence."""
+    """Route that returns a web page styled like a tweet containing a generated sentence."""
     sentence = markov.generate_sentence(20)  # Generate a sentence of 20 words
-    return f"<p>{sentence}</p>"
-
+    
+    # HTML template for a tweet-like display
     html_content = f'''
     <html>
     <head>
@@ -62,8 +62,8 @@ def home():
     <body>
         <div class="tweet-container">
             <div class="tweet-header">
-                <img class="profile-pic" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3zRy2pk7R7laGT_wrbYKl7hcP_CKSR4hdfgWXPLyp69H5W1WC" alt="Profile Picture">
-                <span class="user-name">Charles Baudelaire</span>
+                <img class="profile-pic" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="Profile Picture">
+                <span class="user-name">GeneratedUser</span>
                 <img class="verified-badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified">
             </div>
             <div class="tweet-content">
